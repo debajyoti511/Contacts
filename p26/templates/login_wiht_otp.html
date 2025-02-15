@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+  User | Login with otp
+{% endblock title %}
+
+{% block content %}
+  <h1>Welcome to Login Page</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="un">
+      <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">send OTP</button>
+  </form>
+{% endblock content %}

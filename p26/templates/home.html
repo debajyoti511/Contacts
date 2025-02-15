@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+home
+{% endblock title %}
+
+
+{% block content %}
+<h1>Home Page</h1>
+{% if user.is_authenticated %}
+{% if UO.contacts.all %}
+{% for contact in UO.contacts.all %}
+<a href="{% url 'display' contact.pk %}"><h1>{{contact.name}}</h1></a>
+{% endfor %}
+{% else %}
+<h1>No contacts Yet!! Please create your first contact</h1>
+{% endif %}
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{CO.name}} | update
+{% endblock title %}
+
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <label for="pno">Pno</label>
+    <input type="text" id="pno" name="pno" disabled value="{{CO.pno}}"> <br><br>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{CO.name}}"> <br><br>
+    <label for="email">email</label>
+    <input type="text" id="email" name="email" value="{{CO.email}}"> <br><br>
+    <label for="add">add</label>
+    <input type="text" id="add" name="add" value="{{CO.add}}"> <br><br>
+    <input type="submit" value="Update">
+  </form>
+{% endblock content %}
